@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kona's Bake | Fresh Cakes Online</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="logo">🎂 Kona's Bake</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#products">Cakes</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="dashboard.html">📊 Dashboard</a>
+      </nav>
+      <div class="header-actions">
+        <!-- DARK / LIGHT MODE TOGGLE -->
+        <button
+          id="themeToggle"
+          class="theme-toggle"
+          title="Toggle Dark/Light Mode"
+        >
+          <span class="icon-sun">☀️</span>
+          <span class="icon-moon">🌙</span>
+        </button>
+
+        <div class="cart-icon" id="cartBtn">
+          🛒 <span class="badge" id="cartCount">0</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1>Freshly Baked <span>Happiness</span> Delivered!</h1>
+        <p>
+          Order delicious custom cakes from Kona's Bake for birthdays, weddings
+          & every special moment.
+        </p>
+        <a href="#products" class="btn">Order Now</a>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="products">
+      <h2>Our Delicious Cakes</h2>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <h2>Why Choose Us?</h2>
+      <div class="features">
+        <div class="feature">
+          <span>🍰</span>
+          <h3>Fresh Ingredients</h3>
+          <p>Baked daily with premium ingredients.</p>
+        </div>
+        <div class="feature">
+          <span>🚚</span>
+          <h3>Fast Delivery</h3>
+          <p>Same-day delivery within the city.</p>
+        </div>
+        <div class="feature">
+          <span>💝</span>
+          <h3>Custom Design</h3>
+          <p>Personalized cakes for every occasion.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="contact" id="contact">
+      <h2>Contact Us</h2>
+      <p>📞 +880 1872-098140 | ✉️ hello@konasbake.com</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Kona's Bake. All rights reserved.</p>
+    </footer>
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
+      <div class="cart-header">
+        <h2>Your Cart 🛒</h2>
+        <button id="closeCart">✖</button>
+      </div>
+      <div class="cart-items" id="cartItems">
+        <p class="empty-cart">Your cart is empty!</p>
+      </div>
+      <div class="cart-footer">
+        <h3>Total: ৳<span id="cartTotal">0</span></h3>
+        <button class="btn checkout-btn" id="checkoutBtn">
+          Proceed to Order
+        </button>
+      </div>
+    </aside>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal" id="checkoutModal">
+      <div class="modal-content">
+        <button class="close-modal" id="closeModal">✖</button>
+        <h2>Checkout</h2>
+        <form id="checkoutForm">
+          <input type="text" id="name" placeholder="Full Name" required />
+          <input type="tel" id="phone" placeholder="Phone Number" required />
+          <input type="email" id="email" placeholder="Email Address" required />
+          <textarea
+            id="address"
+            placeholder="Delivery Address"
+            required
+          ></textarea>
+          <input type="date" id="deliveryDate" required />
+          <select id="payment">
+            <option value="cod">Cash on Delivery</option>
+            <option value="bkash">bKash</option>
+            <option value="card">Card Payment</option>
+          </select>
+
+          <!-- BKASH PAYMENT BOX (bKash select korle dekhabe) -->
+          <div class="bkash-box" id="bkashBox">
+            <h3>bKash Payment 📱</h3>
+            <p class="bkash-step">
+              1. Apnar bKash app e <strong>Send Money</strong> korun ei number
+              e:
+            </p>
+            <div class="bkash-number-row">
+              <span class="bkash-number" id="bkashNumber">01872-098140</span>
+              <button type="button" class="copy-btn" id="copyBkash">
+                Copy
+              </button>
+            </div>
+            <p class="bkash-step">
+              2. Amount: <strong>৳<span id="bkashAmount">0</span></strong>
+            </p>
+            <p class="bkash-step">
+              3. Payment shesh hole bKash er
+              <strong>Transaction ID (TrxID)</strong> niche likhun:
+            </p>
+            <input
+              type="text"
+              id="trxId"
+              placeholder="Transaction ID (jemon: 8N7A6D5EE3)"
+              maxlength="12"
+            />
+          </div>
+
+          <button type="submit" class="btn">Place Order ✅</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="modal" id="successModal">
+      <div class="modal-content success">
+        <h2>🎉 Order Placed!</h2>
+        <p id="successMsg"></p>
+        <button class="btn" id="successClose">Continue Shopping</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

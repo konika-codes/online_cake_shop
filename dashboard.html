@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Kona's Bake Admin</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="dash-header">
+    <div class="dash-logo">📊 Kona's Bake — Dashboard</div>
+    <div class="dash-actions">
+      <a href="index.html" class="dash-btn">← Back to Store</a>
+      <button id="dashThemeToggle" class="theme-toggle" title="Toggle Dark/Light Mode">
+        <span class="icon-sun">☀️</span>
+        <span class="icon-moon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- STATS -->
+  <section class="stats-section">
+    <div class="stat-card">
+      <span class="stat-icon">📦</span>
+      <div class="stat-info">
+        <h3 id="statTotalOrders">0</h3>
+        <p>Total Orders</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">💰</span>
+      <div class="stat-info">
+        <h3 id="statTotalRevenue">৳0</h3>
+        <p>Total Revenue</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">⏳</span>
+      <div class="stat-info">
+        <h3 id="statPending">0</h3>
+        <p>Pending</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <span class="stat-icon">✅</span>
+      <div class="stat-info">
+        <h3 id="statDelivered">0</h3>
+        <p>Delivered</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FILTERS -->
+  <section class="filter-section">
+    <h2>All Orders</h2>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="Pending">Pending</button>
+      <button class="filter-btn" data-filter="Processing">Processing</button>
+      <button class="filter-btn" data-filter="Delivered">Delivered</button>
+      <button class="filter-btn" data-filter="Cancelled">Cancelled</button>
+    </div>
+    <button id="clearAllOrders" class="clear-btn">🗑️ Clear All Orders</button>
+  </section>
+
+  <!-- ORDERS LIST -->
+  <section class="orders-section">
+    <div class="orders-grid" id="ordersGrid">
+      <p class="no-orders">No orders yet. Orders will appear here once customers place them.</p>
+    </div>
+  </section>
+
+  <!-- ORDER DETAILS MODAL -->
+  <div class="dash-modal" id="orderModal">
+    <div class="dash-modal-content">
+      <button class="dash-close" id="closeOrderModal">✖</button>
+      <h2>Order Details</h2>
+      <div id="orderDetailContent"></div>
+    </div>
+  </div>
+
+  <script src="dashboard.js"></script>
+</body>
+</html>
